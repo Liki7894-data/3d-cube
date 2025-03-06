@@ -1,0 +1,72 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top, #22cc0b, #2613a5);
+    margin: 0;
+    overflow: hidden;
+}
+.scene{
+    
+    perspective: 800px;
+}
+.cube{
+    position: relative;
+    width: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+}
+.cube div{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.3);
+
+    border: 2px solid cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 0 0 20px cyan;
+    transition: 0.3s;
+}
+.cube:hover div{
+    box-shadow: 0 0 40px cyan;
+}
+.front{
+    transform:translateZ(50PX);
+}
+.back{
+    transform:rotateY(180deg) translateZ(50PX);
+}
+.left{
+    transform:rotateY(-90deg) translateZ(50PX);
+}
+.right{
+    transform:rotateY(90deg) translateZ(50PX);
+}
+.top{
+    transform:rotateX(90deg) translateZ(50PX);
+}
+.bottom{
+    transform:rotateX(-90deg) translateZ(50PX);
+}
+@keyframes rotate{
+    0%{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+audio{
+    display: ruby-base-container;
+    position: absolute;
+}
+audio:hover{
+    display: ruby-text-container;
+    border: 3px solid cyan;
+}
